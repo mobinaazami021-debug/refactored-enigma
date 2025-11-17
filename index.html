@@ -1,0 +1,94 @@
+s<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>بازی‌ـآزمایشگاه هم‌نهشتی مثلث‌ها — نسخهٔ پیشرفته</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">📐🎮</div>
+        <div>
+          <h1>آزمایشگاه بازی‌وار هم‌نهشتی</h1>
+          <p class="sub">نهم — پنج حالت: (ض،ض،ض) (ض،ز،ض) (ز،ض،ز) (و،ض) (و،ز)</p>
+        </div>
+      </div>
+      <div class="hud">
+        <div class="badge">مرحله <span id="levelNum">1</span>/<span id="levelsTotal">5</span></div>
+        <div class="score">امتیاز: <span id="score">0</span></div>
+        <div class="lives">جان: <span id="lives">3</span></div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="left-panel">
+        <div class="panel card gradient">
+          <h2 id="levelTitle">چالش: (ض،ض،ض)</h2>
+          <p id="levelDesc">مثلث هدف را ببین و مثلث خودت را بساز تا هم‌نهشت شوند.</p>
+
+          <div class="controls" id="controls">
+            <!-- ورودی‌ها بر اساس حالت اینجا تولید می‌شود -->
+          </div>
+
+          <div class="buttons">
+            <button id="btnRandom" class="btn accent">مثال تصادفی</button>
+            <button id="btnHint" class="btn ghost">نکته</button>
+            <button id="btnSubmit" class="btn main">ارسال پاسخ</button>
+            <button id="btnSkip" class="btn warn">رد کردن (−1 جان)</button>
+          </div>
+
+          <div class="tips">
+            <div id="message" class="message">موفق باشی!</div>
+          </div>
+        </div>
+
+        <div class="panel card mini">
+          <h3>قوانین ساده</h3>
+          <ul>
+            <li>فقط همان پارامترهای مرحله را ببین و تغییر بده.</li>
+            <li>در حالت‌های (و،ض) و (و،ز) فرض بر مثلث قائم است.</li>
+            <li>لمس کن و گوشه‌ها را بکش یا از ورودی‌ها استفاده کن.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="canvas-area card">
+        <div class="canvas-top">
+          <div class="legend"><span class="dot a"></span>مثلث هدف</div>
+          <div class="legend"><span class="dot b"></span>مثلث تو</div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" aria-label="بوم بازی" ></canvas>
+          <canvas id="confetti" class="confetti"></canvas>
+        </div>
+        <div class="canvas-bottom">
+          <div class="hint-box" id="hintBox">برای دریافت راهنما روی «نکته» بزن.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>ساخته شده برای کلاس — قابل آپلود در GitHub Pages</div>
+      <div class="small">برای README و ZIP آماده هم نیاز داشتی بگو.</div>
+    </footer>
+
+    <!-- modal نتیجه -->
+    <div id="resultModal" class="modal" aria-hidden="true">
+      <div class="modal-card">
+        <h2 id="resultTitle"></h2>
+        <p id="resultText"></p>
+        <div class="modal-actions">
+          <button id="nextBtn" class="btn">مرحله بعد</button>
+          <button id="retryBtn" class="btn ghost">تلاش دوباره</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
