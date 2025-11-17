@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>آزمایشگاه هم‌نهشتی مثلث‌ها — Light & Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">📐✨</div>
+        <div class="titles">
+          <h1>آزمایشگاه هم‌نهشتی مثلث‌ها</h1>
+          <p class="subtitle">پایهٔ نهم — پنج حالت — Light و Pro</p>
+        </div>
+      </div>
+
+      <div class="controls-top">
+        <label class="mode-label">حالت اجرا:</label>
+        <select id="runMode">
+          <option value="light">Light (سریع)</option>
+          <option value="pro">Pro (گرافیک بالا)</option>
+        </select>
+
+        <label class="mode-label">حالت هم‌نهشتی:</label>
+        <select id="modeSelect" aria-label="حالت هم نهشتی">
+          <option value="sss">(ض،ض،ض)</option>
+          <option value="sas">(ض،ز،ض)</option>
+          <option value="asa">(ز،ض،ز)</option>
+          <option value="rhs-leg">(و،ض)</option>
+          <option value="rhs-ang">(و،ز)</option>
+        </select>
+
+        <button id="btnNew" class="btn small">هدف جدید</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="panel left">
+        <section class="card">
+          <h2>مثلث هدف</h2>
+          <div id="targetInfo" class="info">هدف در این‌جا نمایش داده می‌شود.</div>
+          <div class="params" id="targetParams"></div>
+          <button id="btnShowHint" class="btn ghost">نکته</button>
+        </section>
+
+        <section class="card">
+          <h2>مثلث شما (B)</h2>
+          <div id="playerParams" class="params"></div>
+          <div class="row">
+            <button id="btnRandom" class="btn">مقدار تصادفی</button>
+            <button id="btnCheck" class="btn main">بررسی</button>
+          </div>
+          <div id="status" class="status">وضعیت: آماده</div>
+        </section>
+
+        <section class="card small">
+          <h3>راهنما</h3>
+          <ul>
+            <li>فقط پارامترهای مربوطه را تغییر بده.</li>
+            <li>در حالات (و،ض) و (و،ز) مثلث قائم فرض می‌شود.</li>
+            <li>می‌توانی رئوس را در بوم کشیده و جا‌به‌جا کنی (لمسی و موس).</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="canvas-wrap card">
+        <div class="canvas-header">
+          <div class="legend"><span class="dot target"></span> هدف</div>
+          <div class="legend"><span class="dot player"></span> شما</div>
+          <div class="legend modeDisplay" id="modeDisplay"></div>
+        </div>
+
+        <div class="canvas-holder">
+          <canvas id="mainCanvas" aria-label="بوم رسم" ></canvas>
+          <canvas id="effectsCanvas" class="effects" aria-hidden="true"></canvas>
+        </div>
+
+        <div class="canvas-footer">
+          <div id="infoBar" class="infobar">برای نمایش خطا/مراحل از اینجا استفاده می‌شود.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>قابل انتشار در GitHub Pages — هر مشکلی بود پیام بده تا اصلاح کنم.</div>
+      <div class="small">در صورت درخواست، README و فایل ZIP هم آماده می‌کنم.</div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
